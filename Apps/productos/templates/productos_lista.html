@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>LISTADO DE PRODUCTOS</h2>
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>NOMBRE</th>
+            <th>DESCRIPCION</th>
+            <th>PRECIO</th>
+            <th>STOCK</th>
+            <th>CATEGORÍA</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for prod in lista_productos %}
+        <tr>
+            <td>{{ prod.nombre }}</td>
+            <td>{{ prod.descripcion }}</td>  <td>${{ prod.precio }}</td>    <td>{{ prod.stock }}</td>
+            
+            <td>{{ prod.categoria.nombre }}</td>
+            
+            <td>  
+                <a href="{% url 'producto:editarprod' prod.id %}" class="btn btn-warning">EDITAR</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">No se encontraron productos registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>CREAR PRODUCTO AQUÍ</h2>
+<a href="{% url 'producto:crearprod' %}" class="btn btn-success">CREAR</a>
+{% endblock contenido %}

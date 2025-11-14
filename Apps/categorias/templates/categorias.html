@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>LISTADO DE CATEGORIAS</h2>
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>NOMBRE</th>
+            <th>Descripcion</th>
+            <th>Activo</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cat in lista_categorias %}
+        <tr>
+            <td>{{ cat.nombre }}</td>
+            <td>{{ cat.descripcion }}</td>
+            <td>{{ cat.activo }}</td>
+
+
+            <td>  
+                <a href="{% url 'categoria:editarcat' cat.id %}" class="btn btn-warning">EDITAR</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>CREAR CATEGORIAS ACA</h2>
+<a href="{% url 'categoria:crearcat' %}" class="btn btn-success">CREAR</a>
+{% endblock %}

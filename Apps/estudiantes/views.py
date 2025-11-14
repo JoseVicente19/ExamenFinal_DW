@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, ListView, UpdateView
+from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DetailView
 from .models import Estudiante
 from django.urls import reverse_lazy
 from .forms import EstudianteForm
@@ -28,3 +28,7 @@ class EditarEstudianteView(UpdateView):
     model = Estudiante
     form_class = EstudianteForm
     success_url = reverse_lazy('estudiantes:estuapp')
+
+class VerDetailView(DetailView):
+    model = Estudiante
+    template_name = 'ver.html'

@@ -17,13 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Apps.estudiantes import views
-from .views import EstuView, CrearEstudianteView, EditarEstudianteView, VerDetailView
+from .views import CategoriaView, CrearCatView, EditarCatView
 
-app_name='estudiantes'
+app_name='categoria'
 urlpatterns = [
-    path('', EstuView.as_view(), name='estuapp'),
-    path('crear/', CrearEstudianteView.as_view(), name='crear'),
-    path('editar/ <int:pk>', EditarEstudianteView.as_view(), name='editar'),
-    path('ver/ <int:pk>', VerDetailView.as_view(), name='ver'),
+    path('', CategoriaView.as_view(), name='categoria'),
+    path('crear/', CrearCatView.as_view(), name='crearcat'),
+    path('editar/ <int:pk>', EditarCatView.as_view(), name='editarcat'),
+    #path('ver/ <int:pk>', VerDetailView.as_view(), name='ver'),
 
 ]

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h1>Editar Producto</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        Nombre: {{ form.nombre }}
+        <br>
+        Descripción: {{ form.descripcion }}
+        <br>
+        Precio: {{ form.precio }}
+        <br>
+        Stock: {{ form.stock }}
+        <br>
+        
+        Categoría: {{ form.categoria }}
+        <br>
+        
+        <input type="submit" value="GUARDAR">
+    </form>
+
+    <a href="{% url 'producto:producto' %}">VOLVER A LA LISTA DE PRODUCTOS</a>
+
+{% endblock contenido %}

@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'Apps.home',
     'Apps.estudiantes',
     'Apps.informacion',
+    'Apps.categorias',
+    'Apps.productos',
+
+
 
 ]
 

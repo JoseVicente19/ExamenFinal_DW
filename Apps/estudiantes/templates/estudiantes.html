@@ -24,7 +24,8 @@
 
             <td>
                 <a href="{% url 'estudiantes:editar' estudiante.id %}" class="btn btn-warning">EDITAR</a>
-                <a class="btn btn-info">VER</a>
+                <a href="{% url 'estudiantes:ver' estudiante.pk %}" class="btn btn-info">VER</a>
+                
             </td>
         </tr>
         {% endfor %}

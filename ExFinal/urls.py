@@ -23,5 +23,9 @@ urlpatterns = [
     path('home/', include('Apps.home.urls', 'home')),
     path('estudiantes/', include('Apps.estudiantes.urls', 'estudiantes')),
     path('informacion/', include('Apps.informacion.urls', 'info')),
+    path('categoria/', include('Apps.categorias.urls', 'categoria')),
+    path('producto/', include('Apps.productos.urls', 'producto')),
+
+
  
 ]

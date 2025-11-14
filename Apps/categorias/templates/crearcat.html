@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h1>Crear Categoria</h1>
+    <form method="post">
+        {% csrf_token %}
+        Nombre {{ form.nombre }}
+        descripcion {{ form.descripcion }}
+        activo {{ form.activo }}
+        <input type="submit" name="GUARDAR">
+    </form>
+
+    <a href="{% url 'categoria:categoria' %}">VER LISTA DE CATEGORIAS</a>
+
+    
+{% endblock %}
