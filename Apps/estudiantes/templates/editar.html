@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h1>Editar Estudiante</h1>
+    <form method="post">
+        {% csrf_token %}
+        Nombre {{ form.nombre }}
+        Apellido {{ form.apellido }}
+        <input type="submit" name="GUARDAR">
+    </form>
+
+    <a href="{% url 'estudiantes:estuapp' %}">VOLVER A LA LISTA DE ESTUDIANTES</a>
+
+    
+{% endblock %}

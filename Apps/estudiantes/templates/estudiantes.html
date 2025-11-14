@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<form method="get">
+<input type="text" name="NOMBRE" value="{{request.GET.NOMBRE}}">
+<button type="submit">BUSCAR</button>
+</form>
+
+<h2>LISTADO DE ESTUDIANTES</h2>
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>NOMBRE</th>
+            <th>EDAD</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for estudiante in lista_estudiantes %}
+        <tr>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+
+            <td>
+                <a href="{% url 'estudiantes:editar' estudiante.id %}" class="btn btn-warning">EDITAR</a>
+                <a class="btn btn-info">VER</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>CREAR ESTUDIANTE ACA</h2>
+<a href="{% url 'estudiantes:crear' %}" class="btn btn-success">CREAR</a>
+{% endblock %}
